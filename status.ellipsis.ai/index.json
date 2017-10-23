@@ -1,0 +1,42 @@
+{
+  "legend":[
+    {
+      "status": "operational"
+    },
+    {
+      "status": "degraded"
+    },
+    {
+      "status": "partial outage"
+    },
+    {
+      "status": "major outage"
+    },
+
+  ],
+  "system": {
+    "status": "operational",
+    "message": "The Force maybe with you."
+  },
+  "components": [
+    {
+      "name":"Documents",
+      "description": "",
+      "status": "operational",
+      "message": "The Force maybe with you."
+    },
+    {
+      "name":"APIs",
+      "description": "",
+      "status": "operational",
+      "message": "The Force maybe with you."
+    }
+  ],
+  "dependencies": [
+    {
+      "name": "Slack",
+      "status": "operational",
+      "message": "The Force maybe with you."
+    }
+  ]
+}

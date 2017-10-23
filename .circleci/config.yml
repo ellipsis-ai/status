@@ -1,0 +1,17 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: ellipsis/circleci-status:1.0
+        environment:
+          AWS_REGION: us-east-1
+
+    working_directory: ~/status
+    steps:
+      - checkout
+      - run:
+          name: "Deploy to status.ellipsis.ai"
+          command: |
+            mkdir ~/.aws
+            echo -e "[el-status-deployer]\naws_access_key_id = ${STATUS_AWS_ACCESS_KEY}\naws_secret_access_key = ${STATUS_AWS_SECRET_KEY}\nregion = us-east-1" >> ~/.aws/credentials
+            aws s3 sync ./dist s3://status.ellipsis.ai/ --acl=public-read --profile=el-status-deployer
