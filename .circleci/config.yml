@@ -14,4 +14,4 @@ jobs:
           command: |
             mkdir ~/.aws
             echo -e "[deployer]\naws_access_key_id = ${DEPLOYER_AWS_KEY}\naws_secret_access_key = ${DEPLOYER_AWS_SECRET}\nregion = us-east-1" >> ~/.aws/credentials
-            aws s3 sync ./status.ellipsis.ai s3://status.ellipsis.ai/ --acl=public-read --profile=deployer
+            aws s3 sync ./status.ellipsis.ai s3://el-status-prod.de/ --acl=public-read --profile=deployer
